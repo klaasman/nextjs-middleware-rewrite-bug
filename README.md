@@ -1,4 +1,4 @@
-## next.js middleware rewrite bug
+## Middleware rewrites _all_ dynamic routes as soon as it has rewritten one [#38405](https://github.com/vercel/next.js/issues/38405)
 
 Something odd is going on with next.js middleware rewrites where visiting a rewritten route has impact on other routes which should not be rewritten.
 
