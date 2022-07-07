@@ -1,4 +1,23 @@
-This is a [Next.js](https://nextjs.org/) template to use when reporting a [bug in the Next.js repository](https://github.com/vercel/next.js/issues).
+## next.js middleware rewrite bug
+
+Something odd is going on with next.js middleware rewrites where visiting a rewritten route has impact on other routes which should not be rewritten.
+
+- This only happens in a production build.
+- "Regular" pages (without getStaticProps/getServerSideProps) are not affected.
+
+### Steps to reproduce
+
+1. run a build `yarn build`
+2. start app `yarn start`
+3. visit app [localhost:3000](http://localhost:3000)
+4. click a "Page 1" link - target page is rendered
+5. hit back button
+6. click a "Page 2" link (of same section) - "no access" page is rendered
+7. hit back button
+8. click "Page 1" link - expected to see target page, instead we see the "no access" page. Refresh page to see target page.
+   This is a [Next.js](https://nextjs.org/) template to use when reporting a [bug in the Next.js repository](https://github.com/vercel/next.js/issues).
+
+---
 
 ## Getting Started
 
